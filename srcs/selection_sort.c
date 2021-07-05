@@ -60,6 +60,23 @@ t_stack			*sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
 	return (a);
 }
 
+t_stack			*sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
+{
+	if (biggest > size / 2)
+	{
+		while(--biggest > -1)
+			rb(a, b);
+		pa(a, b);
+	}
+	else
+	{
+		while (--biggest > 1)
+			rrb(a, b);
+		pa(a, b);
+	}
+	return (b);
+}
+
 int				selection_sort_a(t_stack *a, t_stack *b, int size)
 {
     int smallest;
@@ -78,14 +95,20 @@ int				selection_sort_a(t_stack *a, t_stack *b, int size)
 	return (0);
 }
 
-int				selection_sort_b(t_stack *a, t_stack *b)
+int				selection_sort_b(t_stack *a, t_stack *b, int size)
 {
+	int biggest;
+	int i;
+
+	i = size;
 	if (is_biggest(b, b->head->data))
 		pa(a, b);
-	while(b->head != NULL)
+	while(i > 0)
 	{
-		bring_biggest_on_top(a, b);
+		biggest = check_biggest_position(b);
+		b = bring_biggest_on_top(a, b);
 		pa(a, b);
+		i--;
 	}
 	return(0);
 }
@@ -120,7 +143,8 @@ int		better_selection_sort(t_stack *a, t_stack *b, int size)
 
 	split_stack(a, b, size);
 	/*selection_sort(b, a, get_stack_size(b));*/
+	selection_sort_b(a, b, get_stack_size(b));
 	selection_sort_a(a, b, get_stack_size(a));
-	selection_sort_b(a, b);
+
 	return(0);
 }

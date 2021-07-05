@@ -16,6 +16,6 @@
 int	sort_three_value_long(t_stack *a, t_stack *b);
 int is_biggest(t_stack *stack, int value);
 int check_biggest_position(t_stack *stack);
-void	bring_biggest_on_top(t_stack *a, t_stack *b);
+t_stack	*bring_biggest_on_top(t_stack *a, t_stack *b);
 
 #endif

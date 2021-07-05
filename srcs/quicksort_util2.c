@@ -98,7 +98,7 @@ int check_biggest_position(t_stack *stack)
     return (index);
 }
 
-void	bring_biggest_on_top(t_stack *a, t_stack *b)
+t_stack 	*bring_biggest_on_top(t_stack *a, t_stack *b)
 {
 	int pos;
 	int size;
@@ -115,4 +115,5 @@ void	bring_biggest_on_top(t_stack *a, t_stack *b)
 		while (--pos > -1)
 			rrb(a, b);
 	}
+    return (b);
 }

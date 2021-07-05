@@ -60,7 +60,7 @@ t_stack			*sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
 	return (a);
 }
 
-int				selection_sort(t_stack *a, t_stack *b, int size)
+int				selection_sort_a(t_stack *a, t_stack *b, int size)
 {
     int smallest;
     int i;
@@ -76,4 +76,51 @@ int				selection_sort(t_stack *a, t_stack *b, int size)
     while( i-- > 1)
 		pa(a,b);
 	return (0);
+}
+
+int				selection_sort_b(t_stack *a, t_stack *b)
+{
+	if (is_biggest(b, b->head->data))
+		pa(a, b);
+	while(b->head != NULL)
+	{
+		bring_biggest_on_top(a, b);
+		pa(a, b);
+	}
+	return(0);
+}
+
+void 	split_stack(t_stack *a, t_stack *b, int size)
+{
+	t_unit *current;
+		int pivot;
+		int i;
+
+		current = a->head;
+		pivot = get_mediane(a, size);
+		while (current && !is_divided_a(a, pivot))
+		{
+				i = 0;
+				if (current->data < pivot)
+				{
+						current = current->next;
+						pb(a, b);
+				}
+				if (current->data >= pivot)
+				{
+						rra(a, b);
+						i++;
+						current = a->head;
+				}
+		}
+}
+
+int		better_selection_sort(t_stack *a, t_stack *b, int size)
+{
+
+	split_stack(a, b, size);
+	/*selection_sort(b, a, get_stack_size(b));*/
+	selection_sort_a(a, b, get_stack_size(a));
+	selection_sort_b(a, b);
+	return(0);
 }

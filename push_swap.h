@@ -34,5 +34,8 @@ typedef struct s_stack
 # include "inc/stack_func.h"
 # include "inc/stack_func2.h"
 # include "inc/selection_sort.h"
+# include "inc/quicksort_util.h"
+# include "inc/quicksort_util2.h"
+# include "inc/quicksort.h"
 
 #endif

@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   selection_sort.h                                   :+:      :+:    :+:   */
+/*   sorting_algo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 16:17:06 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/07/02 16:17:08 by ddecourt         ###   ########.fr       */
+/*   Created: 2021/07/05 14:47:06 by ddecourt          #+#    #+#             */
+/*   Updated: 2021/07/05 14:47:09 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SELECTION_SORT_H
-# define SELECTION_SORT_H
+#include "../push_swap.h"
 
-int get_smallest(t_stack *a, int index);
-t_stack *sort_smallest(t_stack *a, t_stack *b, int size, int smallest);
-int selection_sort_a(t_stack *a, t_stack *b, int size);
-int selection_sort_b(t_stack *a, t_stack *b, int size);
-int better_selection_sort(t_stack *a, t_stack *b, int size);
-
-#endif
+int sorting_algo(t_stack *a, t_stack *b, int size)
+{
+    
+}

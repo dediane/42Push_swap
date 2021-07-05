@@ -44,11 +44,11 @@ int size;
 		sort_three_value(a, b);
 	else if (size == 5)
 	{
-		selection_sort(a, b, size);
+		selection_sort_a(a, b, size);
 	}
 	else
 	{
-		printf("ALGORITHME A CREER\n");
+		better_selection_sort(a, b, size);
 	}
 	printf("stack A \n");
 	read_stack(a);

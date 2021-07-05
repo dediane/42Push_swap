@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   selection_sort.h                                   :+:      :+:    :+:   */
+/*   quicksort_util.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 16:17:06 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/07/02 16:17:08 by ddecourt         ###   ########.fr       */
+/*   Created: 2021/07/05 14:25:26 by ddecourt          #+#    #+#             */
+/*   Updated: 2021/07/05 14:25:28 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SELECTION_SORT_H
-# define SELECTION_SORT_H
+#ifndef QUICKSORT_UTIL_H
+# define QUICKSORT_UTIL_H
 
-int get_smallest(t_stack *a, int index);
-t_stack *sort_smallest(t_stack *a, t_stack *b, int size, int smallest);
-int selection_sort_a(t_stack *a, t_stack *b, int size);
-int selection_sort_b(t_stack *a, t_stack *b, int size);
-int better_selection_sort(t_stack *a, t_stack *b, int size);
+int sort_stack_a(t_stack *a, t_stack *b, int size);
+int	sort_stack_b(t_stack *a, t_stack *b, int size);
+int	get_mediane(t_stack *stack, int size);
+int	is_divided_a(t_stack *stack, int pivot);
+int	is_divided_b(t_stack *stack, int pivot);
 
 #endif

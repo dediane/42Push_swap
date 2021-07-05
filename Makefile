@@ -22,6 +22,9 @@ SRCS =	push_swap.c \
 	srcs/instruction_set2.c \
 	srcs/instruction_set3.c \
 	srcs/selection_sort.c \
+	srcs/quicksort_util.c \
+	srcs/quicksort_util2.c \
+	srcs/quicksort.c \
 
 OBJS = ${SRCS:.c=.o}
 

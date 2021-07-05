@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   selection_sort.h                                   :+:      :+:    :+:   */
+/*   quicksort.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 16:17:06 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/07/02 16:17:08 by ddecourt         ###   ########.fr       */
+/*   Created: 2021/07/05 14:25:09 by ddecourt          #+#    #+#             */
+/*   Updated: 2021/07/05 14:25:11 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SELECTION_SORT_H
-# define SELECTION_SORT_H
+#ifndef QUICKSORT_H
+# define QUICKSORT_H
 
-int get_smallest(t_stack *a, int index);
-t_stack *sort_smallest(t_stack *a, t_stack *b, int size, int smallest);
-int selection_sort_a(t_stack *a, t_stack *b, int size);
-int selection_sort_b(t_stack *a, t_stack *b, int size);
-int better_selection_sort(t_stack *a, t_stack *b, int size);
+int	is_sorted(t_stack *stack);
+int	is_sorted_reverse(t_stack *stack);
+int	rev_sort_three_value_long(t_stack *a, t_stack *b);
+int	revert_sort_three_value(t_stack *a, t_stack *b);
+int quicksort(t_stack *a, t_stack *b, int size);
 
 #endif

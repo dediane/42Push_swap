@@ -218,6 +218,7 @@ int		find_biggest_position(t_stack *stack)
 	return(position);
 }
 
+/*PARTIE A REVOIR NON FUNCTIONAL*/
 int sort_big_b(t_stack *a, t_stack *b, int position, int size)
 {
 	if (position == 1)
@@ -227,7 +228,8 @@ int sort_big_b(t_stack *a, t_stack *b, int position, int size)
 		ra(a, b);
 		return(0);
 	}
-	if (position > size/2)
+	printf("SIZE= %i\n", size);
+	if (position > size)
 	{
 		while (--position > -1)
 			rb(a, b);
@@ -235,7 +237,7 @@ int sort_big_b(t_stack *a, t_stack *b, int position, int size)
 		ra(a, b);
 		return(0);
 	}
-	if (position < size/2)
+	if (position < size)
 	{
 		while (--position > -1)
 			rrb(a, b);

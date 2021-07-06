@@ -80,7 +80,7 @@ t_stack			*sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
 int				selection_sort_a(t_stack *a, t_stack *b, int size)
 {
     int smallest;
-    int i;
+	int i;
 
     i = size;
     while (i > 1)
@@ -89,8 +89,15 @@ int				selection_sort_a(t_stack *a, t_stack *b, int size)
 		a = sort_smallest(a, b, i, smallest);
 		i--;
     }
+	return(0);
+}
+
+int				put_back_in_a(t_stack *a, t_stack *b, int size)
+{
+	int i;
+
     i = size ;
-    while( i-- > 1)
+    while( i-- > -1)
 		pa(a,b);
 	return (0);
 }
@@ -107,7 +114,6 @@ int				selection_sort_b(t_stack *a, t_stack *b, int size)
 	{
 		biggest = check_biggest_position(b);
 		b = bring_biggest_on_top(a, b);
-		pa(a, b);
 		i--;
 	}
 	return(0);
@@ -207,7 +213,7 @@ int		find_biggest_position(t_stack *stack)
 	i = 0;
 	while (current != NULL)
 	{
-		if (current->data > value)
+		if ((current->data > value))
 		{
 			value = current->data;
 			position = i;
@@ -218,32 +224,43 @@ int		find_biggest_position(t_stack *stack)
 	return(position);
 }
 
-/*PARTIE A REVOIR NON FUNCTIONAL*/
-int sort_big_b(t_stack *a, t_stack *b, int position, int size)
+/*int sort_big_b(t_stack *a, t_stack *b, int position, int size)
 {
+	int value;
+
 	if (position == 1)
 	{
 		sb(b);
 		pa(a, b);
+		value = a->head->data;
 		ra(a, b);
-		return(0);
+		return(value);
+	}
+	if (position == 0)
+	{
+		pa(a, b);
+		value = a->head->data;
+		ra(a, b);
+		return(value);
 	}
 	printf("SIZE= %i\n", size);
 	if (position > size)
 	{
-		while (--position > -1)
+		while (position-- > 1)
 			rb(a, b);
 		pa(a, b);
+		value = a->head->data;
 		ra(a, b);
-		return(0);
+		return(value);
 	}
-	if (position < size)
+	if (position <= size)
 	{
-		while (--position > -1)
+		while (position-- > 1)
 			rrb(a, b);
 		pa(a, b);
+		value = a->head->data;
 		ra(a, b);
-		return (0);
+		return (value);
 	}
 	return (1);
 }
@@ -251,23 +268,23 @@ int	sort_chunk_in_b(t_stack *a, t_stack *b, int size)
 {
 	int pos_biggest;
 	int pos_smallest;
+	int limit_big;
 
 	pos_biggest = find_biggest_position(b);
-	printf("BIGGEST POSITION -> %i\n", pos_biggest);
 	pos_smallest = find_smallest_position(b);
-	sort_big_b(a, b, pos_biggest, size/2);
-	/*sort_small_b(a, b, pos_smallest, size/2);*/
+	limit_big = sort_big_b(a, b, pos_biggest, size);
+	sort_small_b(a, b, pos_smallest, size/2);
 	return (0);
-}
+}*/
 
 int		better_selection_sort(t_stack *a, t_stack *b, int size)
 {
 	split_stack_a(a, b, size);
-	printf("STACK A\n");
-	read_stack(a);
-	printf("\nSTACK B\n");
-	read_stack(b);
-	sort_chunk_in_b(a, b, get_stack_size(b));
-
+	split_stack_a(a, b, size/2);
+	selection_sort_a(a, b, size/2);
+	put_back_in_a(a, b, size/2);
+	selection_sort_a(a, b, size);
+	put_back_in_a(a, b, size);
+	split_stack_a(a, b, size/2);
 	return(0);
 }

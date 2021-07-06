@@ -105,15 +105,28 @@ t_stack 	*bring_biggest_on_top(t_stack *a, t_stack *b)
 
 	pos = check_biggest_position(b);
 	size = get_stack_size(b);
-	if (pos > size /2)
+	if (pos == 0)
+		pa(a, b);
+	if (pos == 1)
 	{
-		while (--pos > -1)
-			rb(a, b);
+		sb(b);
+		pa(a, b);
 	}
-	else
+	if ((pos != 0) && (pos != 1) && (pos >= size/2))
 	{
-		while (--pos > -1)
+		while (pos-- > size + 1)
+		{
 			rrb(a, b);
+		}
+		pa(a, b);
+	}
+	if ((pos != 0) && (pos != 1) && (pos < size/2))
+	{
+		while (pos-- > 0)
+		{
+			rb(a, b);
+		}
+		pa(a, b);
 	}
     return (b);
 }

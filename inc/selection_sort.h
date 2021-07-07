@@ -19,5 +19,10 @@ int selection_sort_a(t_stack *a, t_stack *b, int size);
 int selection_sort_b(t_stack *a, t_stack *b, int size);
 int better_selection_sort(t_stack *a, t_stack *b, int size);
 int		find_biggest_position(t_stack *stack);
+int put_back_in_a(t_stack *a, t_stack *b, int size);
+int put_back_in_b(t_stack *a, t_stack *b, int size);
+int		find_smallest_position(t_stack *stack);
+void 	split_stack_b(t_stack *a, t_stack *b, int size);
+void 	split_stack_a(t_stack *a, t_stack *b, int size);
 
 #endif

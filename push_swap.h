@@ -37,5 +37,6 @@ typedef struct s_stack
 # include "inc/quicksort_util.h"
 # include "inc/quicksort_util2.h"
 # include "inc/quicksort.h"
+# include "inc/optimize_algorithm.h"
 
 #endif

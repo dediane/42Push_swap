@@ -46,10 +46,16 @@ int size;
 	{
 		selection_sort_a(a, b, size);
 	}
-	else
+	else if (size < 105)
 	{
+		/*optimize_algorithm(a, b, size);*/
 		better_selection_sort(a, b, size);
 	}
+	else
+	{
+		optimize_algorithm(a, b, size);
+	}
+	
 	/*printf("stack A \n");
 	read_stack(a);
 	printf("stack B \n");

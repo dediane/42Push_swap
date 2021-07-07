@@ -25,6 +25,7 @@ SRCS =	push_swap.c \
 	srcs/quicksort_util.c \
 	srcs/quicksort_util2.c \
 	srcs/quicksort.c \
+	srcs/optimize_algorithm.c\
 
 OBJS = ${SRCS:.c=.o}
 

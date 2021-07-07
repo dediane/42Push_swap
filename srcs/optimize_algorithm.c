@@ -125,26 +125,6 @@ int puts_chunck_in_a(t_stack *a, t_stack *b, int size)
 
 int optimize_algorithm(t_stack *a, t_stack *b, int size)
 {
-        /*int i;*/
-        /*int size_of_chunk;
-
-        i = 0;
-        split_stack_a(a, b, size);
-        split_stack_b(a, b, get_stack_size(b));
-        size_of_chunk = get_stack_size(b);
-        sort_chunk_in_b(a, b, size_of_chunk);
-        puts_chunck_in_b(a, b, size_of_chunk);
-        sort_chunk_in_b(a, b, size_of_chunk);*/
-        /*while (++i < 5)
-            split_stack_b(a, b, get_stack_size(b));
-        size_of_chunk = get_stack_size(b);
-        while (b->head != NULL)
-        {
-            sort_chunk_in_b(a, b, get_stack_size(b));
-        }
-        rotate_sorted_chunk_in_a(a, b, size_of_chunk / 2);*/
-
-        /*ESSAI*/
         int chunk_div;
         int chunk;
         
@@ -186,7 +166,7 @@ int optimize_algorithm(t_stack *a, t_stack *b, int size)
         puts_chunck_in_b(a, b, chunk_div);
         chunk_div = get_stack_size(b);
         selection_sort_b(a, b, get_stack_size(b));
-        rotate_sorted_chunk_in_a(a, b, chunk_div -1);
+        rotate_sorted_chunk_in_a(a, b, chunk_div);
         puts_chunck_in_b(a, b, chunk);
 
            chunk = get_stack_size(b);

@@ -48,8 +48,8 @@ int size;
 	}
 	else if (size < 105)
 	{
-		optimize_algorithm(a, b, size);
-		/* better_selection_sort(a, b, size); */
+		/* optimize_algorithm(a, b, size); */
+		better_selection_sort(a, b, size); 
 	}
 	else
 	{
@@ -59,8 +59,8 @@ int size;
 	/*printf("stack A \n");
 	read_stack(a);
 	printf("stack B \n");
-	read_stack(b);
-	free(a);
-	free(b);*/
+	read_stack(b);*/
+	free_stack(a);
+	free_stack(b);
 	return (0);
 }

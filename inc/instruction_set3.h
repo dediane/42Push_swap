@@ -14,5 +14,6 @@
 # define INSTRUCTION_SET3_H
 
 int rrr(t_stack *a, t_stack *b);
+int free_stack(t_stack *stack);
 
 #endif

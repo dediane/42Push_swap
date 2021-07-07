@@ -45,18 +45,13 @@ t_stack			*sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
 	if (current == NULL)
 		return (a);
 	diff = size - smallest;
-	if (smallest == 1)
-	{
-		sa(a);
-		pb(a, b);
-	}
-	if ((diff < smallest) && (smallest != 1))
+	if (diff < smallest)
 	{
 		while (diff-- > 0)
 			rra(a, b);
 		pb(a, b);
 	}
-	else if ((diff >= smallest) && (smallest != 1))
+	else
 	{
 		while (smallest-- > 0)
 			ra(a, b);
@@ -76,7 +71,7 @@ t_stack			*sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
 			rb(a, b);
 		pa(a, b);
 	}
-	else if (diff <= biggest)
+	else
 	{
 		while (diff-- > 0)
 			rrb(a, b);
@@ -164,13 +159,6 @@ void 	split_stack_b(t_stack *a, t_stack *b, int size)
 				}
 		}
 }
-
-/*t_stack	*puts_chunck_in_a(t_stack *a, t_stack *b, int size)
-{
-	while (--size > 0)
-		pa(a, b);
-	return (a);
-}*/
 
 int		find_smallest_position(t_stack *stack)
 {

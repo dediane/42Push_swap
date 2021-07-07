@@ -18,5 +18,6 @@ t_stack *sort_smallest(t_stack *a, t_stack *b, int size, int smallest);
 int selection_sort_a(t_stack *a, t_stack *b, int size);
 int selection_sort_b(t_stack *a, t_stack *b, int size);
 int better_selection_sort(t_stack *a, t_stack *b, int size);
+int		find_biggest_position(t_stack *stack);
 
 #endif

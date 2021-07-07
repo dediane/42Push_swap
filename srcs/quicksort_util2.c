@@ -82,9 +82,9 @@ int check_biggest_position(t_stack *stack)
     t_unit *current;
 
     index = 0;
-    tmp = 0;
     i = 0;
     current = stack->head;
+	tmp = current->data;
     while (current != NULL)
     {
         if (tmp < current->data)

@@ -50,11 +50,11 @@ int size;
 	{
 		better_selection_sort(a, b, size);
 	}
-	printf("stack A \n");
+	/*printf("stack A \n");
 	read_stack(a);
 	printf("stack B \n");
 	read_stack(b);
 	free(a);
-	free(b);
+	free(b);*/
 	return (0);
 }

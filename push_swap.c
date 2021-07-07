@@ -48,8 +48,8 @@ int size;
 	}
 	else if (size < 105)
 	{
-		/*optimize_algorithm(a, b, size);*/
-		better_selection_sort(a, b, size);
+		optimize_algorithm(a, b, size);
+		/* better_selection_sort(a, b, size); */
 	}
 	else
 	{

@@ -145,15 +145,61 @@ int optimize_algorithm(t_stack *a, t_stack *b, int size)
         rotate_sorted_chunk_in_a(a, b, size_of_chunk / 2);*/
 
         /*ESSAI*/
+        int chunk_div;
+        int chunk;
+        
         split_stack_a(a, b, size);
         split_stack_a(a, b, get_stack_size(a));
-        split_stack_a(a, b, get_stack_size(a));
-        int chunk = get_stack_size(a);
-        puts_chunck_in_a(a, b, chunk);
-        split_stack_a(a, b, chunk);
-        puts_chunck_in_a(a, b, chunk);
+        puts_chunck_in_a(a, b, get_stack_size(a));
         split_stack_b(a, b, get_stack_size(b));
         split_stack_b(a, b, get_stack_size(b));
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div);
+        puts_chunck_in_b(a, b, chunk_div);
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div -1);
+        puts_chunck_in_b(a, b, chunk_div*2);
+        /*split_stack_b(a, b, get_stack_size(b));
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div);
+        puts_chunck_in_b(a, b, chunk_div);*/
+
+        chunk = get_stack_size(b);
+        split_stack_b(a, b, get_stack_size(b));
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div);
+        puts_chunck_in_b(a, b, chunk_div);
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div -1);
+        puts_chunck_in_b(a, b, chunk);
+
+           chunk = get_stack_size(b);
+        split_stack_b(a, b, get_stack_size(b));
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div);
+        puts_chunck_in_b(a, b, chunk_div);
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div -1);
+        puts_chunck_in_b(a, b, chunk);
+
+           chunk = get_stack_size(b);
+        split_stack_b(a, b, get_stack_size(b));
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div);
+        puts_chunck_in_b(a, b, chunk_div);
+        chunk_div = get_stack_size(b);
+        selection_sort_b(a, b, get_stack_size(b));
+        rotate_sorted_chunk_in_a(a, b, chunk_div -1);
+
+
 
         return (0);
 }

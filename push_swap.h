@@ -24,7 +24,6 @@ typedef struct s_stack
     struct s_unit   *head;
 }               t_stack;
 
-
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft/libft.h"

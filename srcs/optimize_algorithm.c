@@ -12,36 +12,17 @@
 
 #include "../push_swap.h"
 
-
-int rotate_sorted_chunk_in_a(t_stack *a, t_stack *b, int size)
+/*int puts_last_chunk_in_b(t_stack *a, t_stack *b, int size, int min_value)
 {
-    while (size-- > 0)
-        ra(a, b);
-    return (0);
-}
-
-int puts_chunk_in_b(t_stack *a, t_stack *b, int size)
-{
-	while (--size > 0)
-		pb(a, b);
-	return (0);
-}
-
-int puts_last_chunk_in_b(t_stack *a, t_stack *b, int size, int min_value)
-{
-    while (--size > 0)
+    while (--size > 0 && (a != NULL))
         pb(a, b);
-    while (a->head->data != min_value)
-        pb(a, b);
+    if (a != NULL)
+    {
+        while (a->head->data != min_value)
+            pb(a, b);
+    }
     return(0);
-}
-
-int puts_chunk_in_a(t_stack *a, t_stack *b, int size)
-{
-	while (--size > 0)
-		pa(a, b);
-	return (0);
-}
+}*/
 
 int get_min_value(t_stack *stack)
 {
@@ -87,34 +68,10 @@ int optimize_algorithm(t_stack *a, t_stack *b, int size)
             chunk_div = get_stack_size(b);
             selection_sort_b(a, b, get_stack_size(b));
             rotate_sorted_chunk_in_a(a, b, chunk_div - i);
-            if (j == 0 || j == 1 )
+            /*if (j == 0 || j == 1 )*/
                 puts_chunk_in_b(a, b, chunk);
         }
-
-
-        /*chunk = get_stack_size(b);
-        split_stack_b(a, b, get_stack_size(b));
-        chunk_div = get_stack_size(b);
-        selection_sort_b(a, b, get_stack_size(b));
-        rotate_sorted_chunk_in_a(a, b, chunk_div);
-        puts_chunck_in_b(a, b, chunk_div);
-        chunk_div = get_stack_size(b);
-        selection_sort_b(a, b, get_stack_size(b));
-        rotate_sorted_chunk_in_a(a, b, chunk_div  - i);
-        puts_chunck_in_b(a, b, chunk);
-
-        chunk = get_stack_size(b);
-        split_stack_b(a, b, get_stack_size(b));
-        chunk_div = get_stack_size(b);
-        selection_sort_b(a, b, get_stack_size(b));
-        rotate_sorted_chunk_in_a(a, b, chunk_div);
-        puts_chunck_in_b(a, b, chunk_div);
-        chunk_div = get_stack_size(b);
-        selection_sort_b(a, b, get_stack_size(b));
-        rotate_sorted_chunk_in_a(a, b, chunk_div - i);*/
-        
-
-        puts_last_chunk_in_b(a, b, chunk, min_value);
+        /*puts_last_chunk_in_b(a, b, chunk, min_value);*/
         split_stack_b(a, b, get_stack_size(b));
         chunk_div = get_stack_size(b);
         selection_sort_b(a, b, get_stack_size(b));
@@ -122,9 +79,6 @@ int optimize_algorithm(t_stack *a, t_stack *b, int size)
         puts_chunk_in_b(a, b, chunk_div);
         chunk_div = get_stack_size(b);
         selection_sort_b(a, b, get_stack_size(b));
-        rotate_sorted_chunk_in_a(a, b, chunk_div -i);
-
-
-
+        rotate_sorted_chunk_in_a(a, b, chunk_div - i);
         return (0);
 }

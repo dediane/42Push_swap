@@ -16,5 +16,7 @@
 int	get_mediane(t_stack *stack, int size);
 int	is_divided_a(t_stack *stack, int pivot);
 int	is_divided_b(t_stack *stack, int pivot);
+void 	split_stack_b(t_stack *a, t_stack *b, int size);
+void 	split_stack_a(t_stack *a, t_stack *b, int size);
 
 #endif

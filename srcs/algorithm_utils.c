@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   optimize_algorithm.h                               :+:      :+:    :+:   */
+/*   algorithm_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 17:16:49 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/07/07 17:16:51 by ddecourt         ###   ########.fr       */
+/*   Created: 2021/07/09 17:22:11 by ddecourt          #+#    #+#             */
+/*   Updated: 2021/07/09 17:22:18 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPTIMIZE_ALGORITHM_H
-# define OPTIMIZE_ALGORITHM_H
+#include "../push_swap.h"
 
-int optimize_algorithm(t_stack *a, t_stack *b, int size);
-int puts_chunk_in_b(t_stack *a, t_stack *b, int size);
-int puts_last_chunk_in_b(t_stack *a, t_stack *b, int size, int min_value);
-int puts_chunk_in_a(t_stack *a, t_stack *b, int size);
-int get_min_value(t_stack *stack);
+int rotate_sorted_chunk_in_a(t_stack *a, t_stack *b, int size)
+{
+    while (size-- > 0)
+        ra(a, b);
+    return (0);
+}
 
-#endif
+int puts_chunk_in_b(t_stack *a, t_stack *b, int size)
+{
+	while (--size > 0)
+		pb(a, b);
+	return (0);
+}
+
+int puts_chunk_in_a(t_stack *a, t_stack *b, int size)
+{
+	while (--size > 0)
+		pa(a, b);
+	return (0);
+}

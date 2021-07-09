@@ -14,7 +14,7 @@
 
 t_stack	*init(void)
 {
-	t_stack *stack;
+	t_stack	*stack;
 
 	stack = malloc(sizeof(*stack));
 	stack->head = NULL;
@@ -23,7 +23,7 @@ t_stack	*init(void)
 
 void	ft_stack(t_stack *stack, int nbr)
 {
-	t_unit *new;
+	t_unit	*new;
 
 	new = malloc(sizeof(*new));
 	if (stack == NULL || new == NULL)
@@ -33,12 +33,10 @@ void	ft_stack(t_stack *stack, int nbr)
 	}
 	new->data = nbr;
 	new->next = stack->head;
-	/*new->before = NULL;
-	stack->head->before = new;*/
 	stack->head = new;
 }
 
-int		ft_unstack(t_stack *stack)
+int	ft_unstack(t_stack *stack)
 {
 	int		unstack_nb;
 	t_unit	*unstack_unit;
@@ -61,7 +59,7 @@ int		ft_unstack(t_stack *stack)
 
 void	read_stack(t_stack *stack)
 {
-	t_unit *current;
+	t_unit	*current;
 
 	if (stack == NULL)
 	{
@@ -79,8 +77,8 @@ void	read_stack(t_stack *stack)
 
 int	stack_swap(t_stack *stack)
 {
-	int tmp1;
-	int tmp2;
+	int	tmp1;
+	int	tmp2;
 
 	tmp1 = ft_unstack(stack);
 	tmp2 = ft_unstack(stack);

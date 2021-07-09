@@ -14,7 +14,7 @@
 
 int	ft_check_int(char **s, int max)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (--max > 1)

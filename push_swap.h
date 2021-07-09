@@ -36,5 +36,6 @@ typedef struct s_stack
 # include "inc/selection_sort.h"
 # include "inc/get_mediane.h"
 # include "inc/optimize_algorithm.h"
+# include "inc/algorithm_utils.h"
 
 #endif

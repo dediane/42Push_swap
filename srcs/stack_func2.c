@@ -14,7 +14,7 @@
 
 int	stack_push(t_stack *a, t_stack *b)
 {
-	int tmp;
+	int	tmp;
 
 	if (a->head == NULL)
 		return (1);
@@ -25,8 +25,8 @@ int	stack_push(t_stack *a, t_stack *b)
 
 int	rotate_stack(t_stack *a, t_stack *b)
 {
-	int tmp;
-	int i;
+	int	tmp;
+	int	i;
 
 	i = 0;
 	tmp = ft_unstack(a);
@@ -46,8 +46,8 @@ int	rotate_stack(t_stack *a, t_stack *b)
 
 int	reverse_rotate_stack(t_stack *a, t_stack *b)
 {
-	int tmp;
-	int i;
+	int	tmp;
+	int	i;
 
 	i = 0;
 	while (a->head != NULL)
@@ -67,12 +67,12 @@ int	reverse_rotate_stack(t_stack *a, t_stack *b)
 
 int	get_stack_size(t_stack *stack)
 {
-	t_unit *current;
-	int size;
+	t_unit	*current;
+	int		size;
 
 	current = stack->head;
 	size = 0;
-	while(current)
+	while (current)
 	{
 		size++;
 		current = current->next;
@@ -82,30 +82,30 @@ int	get_stack_size(t_stack *stack)
 
 int	sort_three_value(t_stack *a, t_stack *b)
 {
-		t_unit *current;
-		int i;
-		int j;
-		int k;
+	t_unit	*current;
+	int		i;
+	int		j;
+	int		k;
 
-		current = a->head;
-		i = current->data;
-		j = current->next->data;
-		k = current->next->next->data;
-		if ((i > j) && (j > k))
-		{
-				sa(a);
-				rra(a, b);
-		}
-		if ((i < j) && (j > k) && (i < k))
-		{
-				sa(a);
-				ra(a, b);
-		}
-		if ((i > j) && (j < k) && (i < k))
-				sa(a);
-		if ((i > j) && (j < k) && (i > k))
-				ra(a, b);
-		if ((i < j) && (j > k) && (i > k))
-				rra(a, b);
-		return (1);
+	current = a->head;
+	i = current->data;
+	j = current->next->data;
+	k = current->next->next->data;
+	if ((i > j) && (j > k))
+	{
+		sa(a);
+		rra(a, b);
+	}
+	if ((i < j) && (j > k) && (i < k))
+	{
+		sa(a);
+		ra(a, b);
+	}
+	if ((i > j) && (j < k) && (i < k))
+		sa(a);
+	if ((i > j) && (j < k) && (i > k))
+		ra(a, b);
+	if ((i < j) && (j > k) && (i > k))
+		rra(a, b);
+	return (1);
 }

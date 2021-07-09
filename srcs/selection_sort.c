@@ -86,50 +86,6 @@ int				selection_sort_b(t_stack *a, t_stack *b, int size)
 	return(0);
 }
 
-void 	split_stack_a(t_stack *a, t_stack *b, int size)
-{
-	t_unit *current;
-		int pivot;
-
-		current = a->head;
-		pivot = get_mediane(a, size);
-		while (current && !is_divided_a(a, pivot))
-		{
-				if (current->data < pivot)
-				{
-						current = current->next;
-						pb(a, b);
-				}
-				if (current->data >= pivot)
-				{
-						ra(a, b);
-						current = a->head;
-				}
-		}
-}
-
-void 	split_stack_b(t_stack *a, t_stack *b, int size)
-{
-	t_unit *current;
-		int pivot;
-
-		current = b->head;
-		pivot = get_mediane(b, size);
-		while (current && !is_divided_b(b, pivot))
-		{
-				if (current->data > pivot)
-				{
-						current = current->next;
-						pa(a, b);
-				}
-				if (current->data <= pivot)
-				{
-						rrb(a, b);
-						current = b->head;
-				}
-		}
-}
-
 int		find_smallest_position(t_stack *stack)
 {
 	int value;
@@ -180,7 +136,6 @@ int		find_biggest_position(t_stack *stack)
 
 int		better_selection_sort(t_stack *a, t_stack *b, int size)
 {
-
 	split_stack_a(a, b, size);
 	selection_sort_a(a, b, get_stack_size(a));
 	selection_sort_b(a, b, get_stack_size(b));

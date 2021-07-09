@@ -10,10 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-libft_cmd:
-	make -C libft 
-
-
 SRCS =	push_swap.c \
 	srcs/check.c \
 	srcs/stack_func.c \
@@ -24,6 +20,7 @@ SRCS =	push_swap.c \
 	srcs/selection_sort.c \
 	srcs/get_mediane.c \
 	srcs/optimize_algorithm.c\
+	srcs/algorithm_utils.c\
 
 OBJS = ${SRCS:.c=.o}
 
@@ -31,7 +28,7 @@ NAME = push_swap
 
 HEADER = inc/push_swap.h
 
-CC = clang
+CC = clang -g3
 
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
@@ -40,10 +37,19 @@ RM = rm -f
 	${CC} -c ${CFLAGS} -o $@ $< 
 
 $(NAME):    ${OBJS}
+		make -C libft
 		${CC} ${CFLAGS} ${OBJS} -L./libft -lft -o ${NAME}
 
 all:	${NAME}
 
 clean: 
+	make clean -C libft
 	${RM} ${OBJS}
 
+fclean: clean
+		make fclean -C libft	
+		${RM} ${NAME}
+
+re:	 fclean all
+
+.PHONY: all clean fclean re

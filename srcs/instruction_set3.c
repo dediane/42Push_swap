@@ -22,7 +22,7 @@ int	rrr(t_stack *a, t_stack *b)
 
 int	free_stack(t_stack *stack)
 {
-	t_unit *unit_to_free;
+	t_unit	*unit_to_free;
 
 	unit_to_free = stack->head;
 	while ((stack->head != NULL) && (stack != NULL))

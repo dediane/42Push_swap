@@ -12,78 +12,6 @@
 
 #include "../push_swap.h"
 
-/*t_stack *sort_biggest_pos(t_stack *a, t_stack *b, int size, int biggest)
-{
-    int diff;
-
-    diff = size - biggest;
-    if (biggest == 1)
-        sb(b);
-    if ((diff > biggest) && (biggest != 1))
-    {
-        while (biggest-- > 0)
-            rb(a, b);
-    }
-    else if ((diff <= biggest) && (biggest != 1))
-    {
-        while (diff-- > 0)
-            rrb(a, b);
-    }
-    pa (a, b);
-    return (a);
-}
-
-t_stack *sort_smallest_pos(t_stack *a, t_stack *b, int size, int smallest)
-{
-    int diff;
-
-    diff = size - smallest;
-    if (smallest == 1)
-        sb(b);
-    if ((diff < smallest) && (smallest != 1))
-    {
-        while (diff-- > 0)
-            rrb(a, b);
-
-    }
-    else if ((diff >= smallest) && (smallest != 1))
-    {
-        while (smallest-- > 0)
-            rb(a, b);
-    }
-    pa(a, b);
-    ra(a, b);
-    return (a);
-}
-
-int sort_chunk_in_b(t_stack *a, t_stack *b, int size)
-{
-    int mediane;
-    int biggest;
-     int smallest; 
-    int i;
-    t_unit *current;
-
-    mediane = get_mediane(b, size);
-    current = b->head;
-    biggest = find_biggest_position(b);
-    i = 0;
-    while (i++ < size / 2)
-    {
-        biggest = find_biggest_position(b);
-        a = sort_biggest_pos(a, b, get_stack_size(b), biggest);
-    }
-    while(i < size)
-    {
-        smallest = find_smallest_position(b);
-        a = sort_smallest_pos(a, b, get_stack_size(b), smallest); 
-        i++;
-    }
-    i = -1;
-    while (++i < size / 2)
-        ra(a, b);
-    return (0);
-}*/
 
 int rotate_sorted_chunk_in_a(t_stack *a, t_stack *b, int size)
 {
@@ -159,7 +87,7 @@ int optimize_algorithm(t_stack *a, t_stack *b, int size)
             chunk_div = get_stack_size(b);
             selection_sort_b(a, b, get_stack_size(b));
             rotate_sorted_chunk_in_a(a, b, chunk_div - i);
-            if (j == 0 || j == 1)
+            if (j == 0 || j == 1 )
                 puts_chunk_in_b(a, b, chunk);
         }
 
@@ -194,7 +122,7 @@ int optimize_algorithm(t_stack *a, t_stack *b, int size)
         puts_chunk_in_b(a, b, chunk_div);
         chunk_div = get_stack_size(b);
         selection_sort_b(a, b, get_stack_size(b));
-        rotate_sorted_chunk_in_a(a, b, chunk_div);
+        rotate_sorted_chunk_in_a(a, b, chunk_div -i);
 
 
 

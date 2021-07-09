@@ -82,15 +82,13 @@ int	get_stack_size(t_stack *stack)
 
 int	sort_three_value(t_stack *a, t_stack *b)
 {
-	t_unit	*current;
 	int		i;
 	int		j;
 	int		k;
 
-	current = a->head;
-	i = current->data;
-	j = current->next->data;
-	k = current->next->next->data;
+	i = a->head->data;
+	j = a->head->next->data;
+	k = a->head->next->next->data;
 	if ((i > j) && (j > k))
 	{
 		sa(a);

@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
+int	sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
 {
 	int			diff;
 	t_unit		*current;
@@ -36,14 +36,14 @@ int sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
 	return (0);
 }
 
-int sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
+int	sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
 {
-	int diff;
+	int	diff;
 
 	diff = size - biggest;
 	if (diff > biggest)
 	{
-		while(biggest-- > 0)
+		while (biggest-- > 0)
 			rb(a, b);
 		pa(a, b);
 	}
@@ -56,88 +56,40 @@ int sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
 	return (0);
 }
 
-int				selection_sort_a(t_stack *a, t_stack *b, int size)
+int	selection_sort_a(t_stack *a, t_stack *b, int size)
 {
-    int smallest;
-	int i;
+	int	smallest;
+	int	i;
 
-    i = size;
-    while (i > 0)
-    {
+	i = size;
+	while (i > 0)
+	{
 		smallest = find_smallest_position(a);
 		sort_smallest(a, b, i, smallest);
 		i--;
-    }
-	return(0);
+	}
+	return (0);
 }
 
-int				selection_sort_b(t_stack *a, t_stack *b, int size)
+int	selection_sort_b(t_stack *a, t_stack *b, int size)
 {
-	int biggest;
-	int i;
+	int	biggest;
+	int	i;
 
 	i = size;
-	while(i > 0)
+	while (i > 0)
 	{
 		biggest = find_biggest_position(b);
 		sort_biggest(a, b, i, biggest);
 		i--;
 	}
-	return(0);
+	return (0);
 }
 
-int		find_smallest_position(t_stack *stack)
-{
-	int value;
-	int position;
-	int i;
-	t_unit *current;
-
-	current = stack->head;
-	value = current->data;
-	position = 0;
-	i = 0;
-	while (current != NULL)
-	{
-		if (current->data < value)
-		{
-			value = current->data;
-			position = i;
-		}
-		i++;
-		current = current->next;
-	}
-	return(position);
-}
-
-int		find_biggest_position(t_stack *stack)
-{
-	int value;
-	int position;
-	int i;
-	t_unit *current;
-
-	current = stack->head;
-	value = current->data;
-	position = 0;
-	i = 0;
-	while (current != NULL)
-	{
-		if ((current->data > value))
-		{
-			value = current->data;
-			position = i;
-		}
-		i++;
-		current = current->next;
-	}
-	return(position);
-}
-
-int		better_selection_sort(t_stack *a, t_stack *b, int size)
+int	better_selection_sort(t_stack *a, t_stack *b, int size)
 {
 	split_stack_a(a, b, size);
 	selection_sort_a(a, b, get_stack_size(a));
 	selection_sort_b(a, b, get_stack_size(b));
-	return(0);
+	return (0);
 }

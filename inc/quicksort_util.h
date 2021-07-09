@@ -13,8 +13,6 @@
 #ifndef QUICKSORT_UTIL_H
 # define QUICKSORT_UTIL_H
 
-int sort_stack_a(t_stack *a, t_stack *b, int size);
-int	sort_stack_b(t_stack *a, t_stack *b, int size);
 int	get_mediane(t_stack *stack, int size);
 int	is_divided_a(t_stack *stack, int pivot);
 int	is_divided_b(t_stack *stack, int pivot);

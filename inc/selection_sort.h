@@ -14,7 +14,7 @@
 # define SELECTION_SORT_H
 
 int get_smallest(t_stack *a, int index);
-t_stack *sort_smallest(t_stack *a, t_stack *b, int size, int smallest);
+int sort_smallest(t_stack *a, t_stack *b, int size, int smallest);
 int selection_sort_a(t_stack *a, t_stack *b, int size);
 int selection_sort_b(t_stack *a, t_stack *b, int size);
 int better_selection_sort(t_stack *a, t_stack *b, int size);

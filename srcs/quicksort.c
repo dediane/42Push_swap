@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	is_sorted(t_stack *stack)
+/*int	is_sorted(t_stack *stack)
 {
 	t_unit *current;
 	t_unit *next;
@@ -145,9 +145,9 @@ void	sort_last_value(t_stack *a, t_stack *b)
 	}
 	while (b->head != NULL)
 		pa(a, b);
-}
+}*/
 
-int quicksort(t_stack *a, t_stack *b, int size)
+/*int quicksort(t_stack *a, t_stack *b, int size)
 {
 	int tmp;
 	int tmp2;
@@ -157,7 +157,7 @@ int quicksort(t_stack *a, t_stack *b, int size)
 	sort_stack_b(a, b, size - tmp);
 	tmp2 = get_stack_size(b);
 	sort_stack_a(a, b, size - tmp - tmp2);
-	/*while (check_biggest_position(b) < 3)
+	while (check_biggest_position(b) < 3)
 	{
 		while (is_biggest(b, b->head->data))
 			pa(a, b);
@@ -175,7 +175,7 @@ int quicksort(t_stack *a, t_stack *b, int size)
 		while(--pos > -1)
 			rrb(a, b);
 	}*/
-	while (b->head != NULL && (get_stack_size(b) >= 3))
+	/*while (b->head != NULL && (get_stack_size(b) >= 3))
 	{
 		while ((b->head != NULL) && (check_biggest_position(b) < 3))
 		{
@@ -185,7 +185,7 @@ int quicksort(t_stack *a, t_stack *b, int size)
 				rev_sort_three_value_long(b, a);
 		}
 		bring_biggest_on_top(a, b);
-	}
+	}*/
 	/*if (b->head != NULL)
 		sort_last_value(a, b);*/
 	/*{
@@ -200,6 +200,6 @@ int quicksort(t_stack *a, t_stack *b, int size)
 		{
 
 		}
-	}*/
+	}
     return (0);
-}
+}*/

@@ -43,24 +43,11 @@ int size;
 	if (size == 3)
 		sort_three_value(a, b);
 	else if (size == 5)
-	{
 		selection_sort_a(a, b, size);
-	}
 	else if (size < 105)
-	{
-		/*split_stack_a(a, b, size);*/
-		optimize_algorithm(a, b, size); 
-		/*better_selection_sort(a, b, size); */
-	}
+		better_selection_sort(a, b, size); 
 	else
-	{
 		optimize_algorithm(a, b, size);
-	}
-	
-	/*printf("stack A \n");
-	read_stack(a);
-	printf("stack B \n");
-	read_stack(b);*/
 	free_stack(a);
 	free_stack(b);
 	return (0);

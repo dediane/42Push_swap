@@ -36,14 +36,14 @@ int				get_smallest(t_stack *a, int index)
 	return (index);
 }
 
-t_stack			*sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
+int sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
 {
 	int			diff;
 	t_unit		*current;
 
 	current = a->head;
 	if (current == NULL)
-		return (a);
+		return (1);
 	diff = size - smallest;
 	if (diff < smallest)
 	{
@@ -57,10 +57,10 @@ t_stack			*sort_smallest(t_stack *a, t_stack *b, int size, int smallest)
 			ra(a, b);
 		pb(a, b);
 	}
-	return (a);
+	return (0);
 }
 
-t_stack			*sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
+int sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
 {
 	int diff;
 
@@ -77,7 +77,7 @@ t_stack			*sort_biggest(t_stack *a, t_stack *b, int size, int biggest)
 			rrb(a, b);
 		pa(a, b);
 	}
-	return (b);
+	return (0);
 }
 
 int				selection_sort_a(t_stack *a, t_stack *b, int size)
@@ -89,7 +89,7 @@ int				selection_sort_a(t_stack *a, t_stack *b, int size)
     while (i > 0)
     {
 		smallest = get_smallest(a, 0);
-		a = sort_smallest(a, b, i, smallest);
+		sort_smallest(a, b, i, smallest);
 		i--;
     }
 	return(0);
@@ -104,7 +104,7 @@ int				selection_sort_b(t_stack *a, t_stack *b, int size)
 	while(i > 0)
 	{
 		biggest = find_biggest_position(b);
-		b = sort_biggest(a, b, i, biggest);
+		sort_biggest(a, b, i, biggest);
 		i--;
 	}
 	return(0);
@@ -114,13 +114,11 @@ void 	split_stack_a(t_stack *a, t_stack *b, int size)
 {
 	t_unit *current;
 		int pivot;
-		int i;
 
 		current = a->head;
 		pivot = get_mediane(a, size);
 		while (current && !is_divided_a(a, pivot))
 		{
-				i = 0;
 				if (current->data < pivot)
 				{
 						current = current->next;
@@ -129,7 +127,6 @@ void 	split_stack_a(t_stack *a, t_stack *b, int size)
 				if (current->data >= pivot)
 				{
 						ra(a, b);
-						i++;
 						current = a->head;
 				}
 		}
@@ -139,13 +136,11 @@ void 	split_stack_b(t_stack *a, t_stack *b, int size)
 {
 	t_unit *current;
 		int pivot;
-		int i;
 
 		current = b->head;
 		pivot = get_mediane(b, size);
 		while (current && !is_divided_b(b, pivot))
 		{
-				i = 0;
 				if (current->data > pivot)
 				{
 						current = current->next;
@@ -154,7 +149,6 @@ void 	split_stack_b(t_stack *a, t_stack *b, int size)
 				if (current->data <= pivot)
 				{
 						rrb(a, b);
-						i++;
 						current = b->head;
 				}
 		}

@@ -13,9 +13,7 @@
 #ifndef QUICKSORT_UTIL2_H
 # define QUICKSORT_UTIL2_H 
 
-int	sort_three_value_long(t_stack *a, t_stack *b);
 int is_biggest(t_stack *stack, int value);
 int check_biggest_position(t_stack *stack);
-t_stack	*bring_biggest_on_top(t_stack *a, t_stack *b);
 
 #endif

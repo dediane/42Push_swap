@@ -14,9 +14,6 @@
 # define OPTIMIZE_ALGORITHM_H
 
 int optimize_algorithm(t_stack *a, t_stack *b, int size);
-int puts_chunk_in_b(t_stack *a, t_stack *b, int size);
-int puts_last_chunk_in_b(t_stack *a, t_stack *b, int size, int min_value);
-int puts_chunk_in_a(t_stack *a, t_stack *b, int size);
 int get_min_value(t_stack *stack);
 
 #endif

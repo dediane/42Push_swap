@@ -21,7 +21,7 @@ int	rotate_sorted_chunk_in_a(t_stack *a, t_stack *b, int size)
 
 int	puts_chunk_in_b(t_stack *a, t_stack *b, int size)
 {
-	while (--size > 0)
+	while (size-- > 0)
 		pb(a, b);
 	return (0);
 }

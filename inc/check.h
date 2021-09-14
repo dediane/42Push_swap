@@ -13,7 +13,7 @@
 #ifndef CHECK_H
 # define CHECK_H
 
-#include "../push_swap.h"
+# include "../push_swap.h"
 
 int	ft_check_int(char **s, int max);
 int	ft_check_double(t_stack *s);

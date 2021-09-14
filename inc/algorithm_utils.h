@@ -13,9 +13,9 @@
 #ifndef ALGORITHM_UTILS_H
 # define ALGORITHM_UTILS_H
 
-int rotate_sorted_chunk_in_a(t_stack *a, t_stack *b, int size);
-int puts_chunk_in_b(t_stack *a, t_stack *b, int size);
-int puts_chunk_in_a(t_stack *a, t_stack *b, int size);
+int	rotate_sorted_chunk_in_a(t_stack *a, t_stack *b, int size);
+int	puts_chunk_in_b(t_stack *a, t_stack *b, int size);
+int	puts_chunk_in_a(t_stack *a, t_stack *b, int size);
 int	find_biggest_position(t_stack *stack);
 int	find_smallest_position(t_stack *stack);
 

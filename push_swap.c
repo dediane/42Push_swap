@@ -12,21 +12,21 @@
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-int size;
-	t_stack *a;
-	t_stack *b;
+	int		size;
+	t_stack	*a;
+	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
 	size = ac;
 	if (ac == 1)
-			return (0);
+		return (0);
 	if (!(ft_check_int(av, ac)))
 	{
-			ft_putstr("Error, only integer\n");
-			return (0);
+		ft_putstr("Error, only integer\n");
+		return (0);
 	}
 	a = init();
 	b = init();
@@ -45,7 +45,8 @@ int size;
 	else if (size == 5)
 		selection_sort_a(a, b, size);
 	else if (size < 105)
-		better_selection_sort(a, b, size); 
+		better_selection_sort(a, b, size);
+		/*optimize_algorithm(a, b, size);*/
 	else
 		optimize_algorithm(a, b, size);
 	free_stack(a);

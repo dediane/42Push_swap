@@ -13,10 +13,10 @@
 #ifndef INSTRUCTION_SET2_H
 # define INSTRUCTION_SET2_H
 
-int ra(t_stack *a, t_stack *b);
-int rb(t_stack *a, t_stack *b);
-int rr(t_stack *a, t_stack *b);
-int rra(t_stack *a, t_stack *b);
-int rrb(t_stack *a, t_stack *b);
+int	ra(t_stack *a, t_stack *b);
+int	rb(t_stack *a, t_stack *b);
+int	rr(t_stack *a, t_stack *b);
+int	rra(t_stack *a, t_stack *b);
+int	rrb(t_stack *a, t_stack *b);
 
 #endif

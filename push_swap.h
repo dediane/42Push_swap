@@ -13,20 +13,10 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct  s_unit
-{
-    int data;
-    struct s_unit   *next;
-}               t_unit;
-
-typedef struct s_stack
-{
-    struct s_unit   *head;
-}               t_stack;
-
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft/libft.h"
+# include "inc/stack.h"
 # include "inc/check.h"
 # include "inc/instruction_set.h"
 # include "inc/instruction_set2.h"

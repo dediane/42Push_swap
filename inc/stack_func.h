@@ -13,10 +13,10 @@
 #ifndef STACK_FUNC_H
 # define STACK_FUNC_H
 
-t_stack *init(void);
-void    ft_stack(t_stack *stack, int nbr);
-int     ft_unstack(t_stack  *stack);
-void    read_stack(t_stack *stack);
-int     stack_swap(t_stack *stack);
+t_stack	*init(void);
+void	ft_stack(t_stack *stack, int nbr);
+int		ft_unstack(t_stack *stack);
+void	read_stack(t_stack *stack);
+int		stack_swap(t_stack *stack);
 
 #endif

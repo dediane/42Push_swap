@@ -13,10 +13,10 @@
 #ifndef STACK_FUNC2_H
 # define STACK_FUNC2_H
 
-int stack_push(t_stack *a, t_stack *b);
-int rotate_stack(t_stack *a, t_stack *b);
-int reverse_rotate_stack(t_stack *a, t_stack *b);
-int get_stack_size(t_stack *stack);
+int	stack_push(t_stack *a, t_stack *b);
+int	rotate_stack(t_stack *a, t_stack *b);
+int	reverse_rotate_stack(t_stack *a, t_stack *b);
+int	get_stack_size(t_stack *stack);
 int	sort_three_value(t_stack *a, t_stack *b);
 
 #endif

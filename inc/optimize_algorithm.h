@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #ifndef OPTIMIZE_ALGORITHM_H
-#define OPTIMIZE_ALGORITHM_H
+# define OPTIMIZE_ALGORITHM_H
 
-int optimize_algorithm(t_stack *a, t_stack *b, int size);
-int get_min_value(t_stack *stack);
+int	optimize_algorithm(t_stack *a, t_stack *b, int size);
+int	sort_half(t_stack *a, t_stack *b, int size);
+int	sort_eight(t_stack *a, t_stack *b, int eight);
 
 #endif

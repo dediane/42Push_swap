@@ -12,12 +12,12 @@
 
 #include "../push_swap.h"
 
-int	get_mediane(t_stack *stack, int size)
+int get_mediane(t_stack *stack, int size)
 {
-	int		iterations;
-	int		value;
-	t_unit	*current;
-	t_unit	*next;
+	int iterations;
+	int value;
+	t_unit *current;
+	t_unit *next;
 
 	current = stack->head;
 	next = current->next;
@@ -41,9 +41,9 @@ int	get_mediane(t_stack *stack, int size)
 	return (-1);
 }
 
-int	is_divided_a(t_stack *stack, int pivot)
+int is_divided_a(t_stack *stack, int pivot)
 {
-	t_unit	*current;
+	t_unit *current;
 
 	current = stack->head;
 	while (current)
@@ -55,9 +55,9 @@ int	is_divided_a(t_stack *stack, int pivot)
 	return (1);
 }
 
-int	is_divided_b(t_stack *stack, int pivot)
+int is_divided_b(t_stack *stack, int pivot)
 {
-	t_unit	*current;
+	t_unit *current;
 
 	current = stack->head;
 	while (current)
@@ -69,21 +69,21 @@ int	is_divided_b(t_stack *stack, int pivot)
 	return (1);
 }
 
-void	split_stack_a(t_stack *a, t_stack *b, int size)
+void split_stack_a(t_stack *a, t_stack *b, int size)
 {
-	t_unit	*current;
-	int		pivot;
+	t_unit *current;
+	int pivot;
 
 	current = a->head;
 	pivot = get_mediane(a, size);
 	while (current && !is_divided_a(a, pivot))
 	{
-		if (current->data < pivot)
+		if (current->data <= pivot)
 		{
 			current = current->next;
 			pb(a, b);
 		}
-		if (current->data >= pivot)
+		if (current->data > pivot)
 		{
 			ra(a, b);
 			current = a->head;
@@ -91,10 +91,10 @@ void	split_stack_a(t_stack *a, t_stack *b, int size)
 	}
 }
 
-void	split_stack_b(t_stack *a, t_stack *b, int size)
+void split_stack_b(t_stack *a, t_stack *b, int size)
 {
-	t_unit	*current;
-	int		pivot;
+	t_unit *current;
+	int pivot;
 
 	current = b->head;
 	pivot = get_mediane(b, size);

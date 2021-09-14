@@ -11,25 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef OPTIMIZE_ALGORITHM_H
-# define OPTIMIZE_ALGORITHM_H
-
-typedef	struct	s_chunk_size
-{
-	int half_a;
-	int half_b;
-	int quarter_a_1;
-	int quarter_a_2;
-	int quarter_b_1;
-	int quarter_b_2;
-	int	eighth_a_1;
-	int eighth_a_2;
-	int eighth_a_3;
-	int eighth_a_4;
-	int	eighth_b_1;
-	int eighth_b_2;
-	int eighth_b_3;
-	int eighth_b_4;
-}				t_chunk_size;
+#define OPTIMIZE_ALGORITHM_H
 
 int optimize_algorithm(t_stack *a, t_stack *b, int size);
 int get_min_value(t_stack *stack);

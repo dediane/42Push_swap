@@ -26,13 +26,6 @@ int	puts_chunk_in_b(t_stack *a, t_stack *b, int size)
 	return (0);
 }
 
-int	puts_chunk_in_a(t_stack *a, t_stack *b, int size)
-{
-	while (--size > 0)
-		pa(a, b);
-	return (0);
-}
-
 int	find_smallest_position(t_stack *stack)
 {
 	int		value;

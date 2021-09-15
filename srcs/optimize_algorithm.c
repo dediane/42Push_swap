@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	sort_eight(t_stack *a, t_stack *b, int eight)
+int sort_eight(t_stack *a, t_stack *b, int eight)
 {
 	puts_chunk_in_b(a, b, eight);
 	selection_sort_b(a, b, eight);
@@ -20,10 +20,10 @@ int	sort_eight(t_stack *a, t_stack *b, int eight)
 	return (0);
 }
 
-int	sort_half(t_stack *a, t_stack *b, int size)
+int sort_half(t_stack *a, t_stack *b, int size)
 {
-	int	quarter;
-	int	eight;
+	int quarter;
+	int eight;
 
 	split_stack_b(a, b, size);
 	quarter = get_stack_size(b);
@@ -42,9 +42,9 @@ int	sort_half(t_stack *a, t_stack *b, int size)
 	return (0);
 }
 
-int	optimize_algorithm(t_stack *a, t_stack *b, int size)
+int optimize_algorithm(t_stack *a, t_stack *b, int size)
 {
-	int	x;
+	int x;
 
 	split_stack_a(a, b, size);
 	x = get_stack_size(b);

@@ -44,9 +44,8 @@ int	check_if_sorted(t_stack *a)
 	return (1);
 }
 
-int	ft_atoi_ps(const char *str, int i,  int j, long long int nb)
+int	ft_atoi_ps(const char *str, int i, int j, long long int nb)
 {
-
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
@@ -64,10 +63,10 @@ int	ft_atoi_ps(const char *str, int i,  int j, long long int nb)
 		return ((int)nb);
 }
 
-int null_data(t_stack *a)
+int	null_data(t_stack *a)
 {
-	int count;
-	t_unit *current;
+	int		count;
+	t_unit	*current;
 
 	count = 0;
 	current = a->head;
@@ -77,7 +76,7 @@ int null_data(t_stack *a)
 			return (1);
 		current = current->next;
 	}
-	return (0);	
+	return (0);
 }
 
 int	main(int ac, char **av)

@@ -28,7 +28,7 @@ NAME = push_swap
 
 HEADER = inc/push_swap.h
 
-CC = clang -g3
+CC = clang 
 
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -f

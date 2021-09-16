@@ -15,6 +15,6 @@
 
 int	optimize_algorithm(t_stack *a, t_stack *b, int size);
 int	sort_half(t_stack *a, t_stack *b, int size);
-int	sort_eight(t_stack *a, t_stack *b, int eight);
+int	sort_eight(t_stack *a, t_stack *b, int eight, int quarter);
 
 #endif

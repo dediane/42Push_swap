@@ -31,14 +31,12 @@ int	ft_check_int(char **s, int max)
 	return (1);
 }
 
-int	ft_check_double(t_stack *s)
+int	ft_check_double(t_stack *s, int flag)
 {
 	t_unit	*tmp;
 	t_unit	*current;
-	int		flag;
 
 	tmp = s->head;
-	flag = 0;
 	while (tmp != NULL)
 	{
 		current = s->head;
@@ -48,7 +46,10 @@ int	ft_check_double(t_stack *s)
 			{
 				flag++;
 				if (flag > 1)
+				{
+					ft_putstr("Error, double value.\n");
 					return (1);
+				}
 			}
 			current = current->next;
 		}

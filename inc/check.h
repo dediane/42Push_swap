@@ -16,6 +16,6 @@
 # include "../push_swap.h"
 
 int	ft_check_int(char **s, int max);
-int	ft_check_double(t_stack *s);
+int	ft_check_double(t_stack *s, int flag);
 
 #endif

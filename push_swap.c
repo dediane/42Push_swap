@@ -44,6 +44,42 @@ int	check_if_sorted(t_stack *a)
 	return (1);
 }
 
+int	ft_atoi_ps(const char *str, int i,  int j, long long int nb)
+{
+
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			j = j * -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+		nb = nb * 10 + (str[i++] - 48);
+	nb = nb * j;
+	if ((nb > 2147483647) || (nb < -2147483648 ))
+		return (-2147483648);
+	else
+		return ((int)nb);
+}
+
+int null_data(t_stack *a)
+{
+	int count;
+	t_unit *current;
+
+	count = 0;
+	current = a->head;
+	while (current->next != NULL)
+	{
+		if (current->data == -2147483648)
+			return (1);
+		current = current->next;
+	}
+	return (0);	
+}
+
 int	main(int ac, char **av)
 {
 	int		size;
@@ -63,9 +99,9 @@ int	main(int ac, char **av)
 	a = init();
 	b = init();
 	while (--size > 0)
-		ft_stack(a, ft_atoi(av[size]));
+		ft_stack(a, ft_atoi_ps(av[size], 0, 1, 0));
 	size = ac - 1;
-	if (!(check_if_sorted(a)) && !(ft_check_double(a, 0)))
+	if (!(ft_check_double(a, 0)) && !(check_if_sorted(a)))
 		sort_data(a, b, size);
 	free_stack(a);
 	free_stack(b);

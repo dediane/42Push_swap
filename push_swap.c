@@ -20,7 +20,6 @@ int	sort_data(t_stack *a, t_stack *b, int size)
 		selection_sort_a(a, b, size);
 	else if (size < 105)
 		better_selection_sort(a, b, size);
-		/*optimize_algorithm(a, b, size);*/
 	else
 		optimize_algorithm(a, b, size);
 	return (0);

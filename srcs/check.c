@@ -58,3 +58,17 @@ int	ft_check_double(t_stack *s, int flag)
 	}
 	return (0);
 }
+
+int	check_if_sorted(t_stack *a)
+{
+	t_unit	*current;
+
+	current = a->head;
+	while (current->next != NULL)
+	{
+		if (current->data > current->next->data)
+			return (0);
+		current = current->next;
+	}
+	return (1);
+}

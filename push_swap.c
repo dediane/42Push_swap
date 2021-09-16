@@ -30,20 +30,6 @@ int	sort_data(t_stack *a, t_stack *b, int size)
 	return (0);
 }
 
-int	check_if_sorted(t_stack *a)
-{
-	t_unit	*current;
-
-	current = a->head;
-	while (current->next != NULL)
-	{
-		if (current->data > current->next->data)
-			return (0);
-		current = current->next;
-	}
-	return (1);
-}
-
 int	ft_atoi_ps(const char *str, int i, int j, long long int nb)
 {
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
@@ -63,7 +49,7 @@ int	ft_atoi_ps(const char *str, int i, int j, long long int nb)
 		return ((int)nb);
 }
 
-int	null_data(t_stack *a)
+int	check_data(t_stack *a)
 {
 	int		count;
 	t_unit	*current;
@@ -73,7 +59,10 @@ int	null_data(t_stack *a)
 	while (current->next != NULL)
 	{
 		if (current->data == -2147483648)
+		{
+			ft_putstr("Error, invalid integer\n");
 			return (1);
+		}
 		current = current->next;
 	}
 	return (0);
@@ -100,7 +89,7 @@ int	main(int ac, char **av)
 	while (--size > 0)
 		ft_stack(a, ft_atoi_ps(av[size], 0, 1, 0));
 	size = ac - 1;
-	if (!(ft_check_double(a, 0)) && !(check_if_sorted(a)))
+	if (!(ft_check_double(a, 0)) && !(check_if_sorted(a)) && !(check_data(a)))
 		sort_data(a, b, size);
 	free_stack(a);
 	free_stack(b);

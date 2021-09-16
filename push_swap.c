@@ -49,25 +49,6 @@ int	ft_atoi_ps(const char *str, int i, int j, long long int nb)
 		return ((int)nb);
 }
 
-int	check_data(t_stack *a)
-{
-	int		count;
-	t_unit	*current;
-
-	count = 0;
-	current = a->head;
-	while (current->next != NULL)
-	{
-		if (current->data == -2147483648)
-		{
-			ft_putstr("Error, invalid integer\n");
-			return (1);
-		}
-		current = current->next;
-	}
-	return (0);
-}
-
 int	main(int ac, char **av)
 {
 	int		size;

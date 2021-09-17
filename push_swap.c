@@ -64,7 +64,7 @@ int	main(int ac, char **av)
 	flag = 0;
 	if (ac == 1 || ac == 2)
 		return (0);
-	if (!(ft_check_int(av, ac)))
+	if (!(ft_check_int(av, ac, -1, 0)))
 		return (0);
 	a = init();
 	b = init();

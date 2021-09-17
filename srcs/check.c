@@ -15,21 +15,27 @@
 int	ft_check_int(char **s, int max)
 {
 	int	i;
+	int	flag;
 
 	i = -1;
+	flag = 0;
 	while (--max > 1)
 	{
 		while (s[max][++i])
 		{
 			if (s[max][i] > 57 || s[max][i] < 48)
 			{
-				if (s[max][i] != 45)
+				if ((s[max][i] != 45) || ((s[max][i] == 45) && (flag != 0)))
 				{
 					ft_putstr("Error, only integer\n");
 					return (0);
 				}
+				if (s[max][i] == 45)
+					flag = 1;
 			}
 		}
+		flag = 0;
+		i = -1;
 	}
 	return (1);
 }

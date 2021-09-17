@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.h                                            :+:      :+:    :+:   */
+/*   sort_five_value.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 16:16:05 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/07/02 16:16:07 by ddecourt         ###   ########.fr       */
+/*   Created: 2021/09/17 19:17:59 by ddecourt          #+#    #+#             */
+/*   Updated: 2021/09/17 19:18:02 by ddecourt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECK_H
-# define CHECK_H
+#ifndef SORT_FIVE_VALUE_H
+# define SORT_FIVE_VALUE_H
 
-# include "../push_swap.h"
-
-int	ft_check_int(char **s, int max);
-int	ft_check_double(t_stack *s, int flag);
-int	check_if_sorted(t_stack *a);
-int	c_flag(int flag);
+int	sort_five_value(t_stack *a, t_stack *b, int size);
+int	final_sort_2(t_stack *a, t_stack *b, int i, int j);
+int	final_sort(t_stack *a, t_stack *b);
+int	sort_middle2_pos(t_stack *a, t_stack *b);
+int	sort_middle_pos(t_stack *a, t_stack *b);
 
 #endif

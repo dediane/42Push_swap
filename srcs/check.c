@@ -24,7 +24,10 @@ int	ft_check_int(char **s, int max)
 			if (s[max][i] > 57 || s[max][i] < 48)
 			{
 				if (s[max][i] != 45)
+				{
+					ft_putstr("Error, only integer\n");
 					return (0);
+				}
 			}
 		}
 	}
@@ -73,21 +76,13 @@ int	check_if_sorted(t_stack *a)
 	return (1);
 }
 
-int	check_data(t_stack *a)
+int	c_flag(int flag)
 {
-	int		count;
-	t_unit	*current;
-
-	count = 0;
-	current = a->head;
-	while (current->next != NULL)
+	if (flag == 1)
 	{
-		if (current->data == -2147483648)
-		{
-			ft_putstr("Error, invalid integer\n");
-			return (1);
-		}
-		current = current->next;
+		ft_putstr("Error, invalid integer\n");
+		return (1);
 	}
-	return (0);
+	else
+		return (0);
 }

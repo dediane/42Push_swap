@@ -27,7 +27,7 @@ int	ft_check_int(char **s, int max)
 			{
 				if ((s[max][i] != 45) || ((s[max][i] == 45) && (flag != 0)))
 				{
-					ft_putstr("Error, only integer\n");
+					ft_putstr("Error, not an integer\n");
 					return (0);
 				}
 				if (s[max][i] == 45)
@@ -56,7 +56,7 @@ int	ft_check_double(t_stack *s, int flag)
 				flag++;
 				if (flag > 1)
 				{
-					ft_putstr("Error, double value.\n");
+					ft_putstr("Error, double value\n");
 					return (1);
 				}
 			}
@@ -86,7 +86,7 @@ int	c_flag(int flag)
 {
 	if (flag == 1)
 	{
-		ft_putstr("Error, invalid integer\n");
+		ft_putstr("Error, not an integer\n");
 		return (1);
 	}
 	else

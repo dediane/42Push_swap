@@ -17,6 +17,6 @@ char	**ft_parse_arg(char *s);
 int		ft_get_size(char **parse);
 char	**ft_add_one_arg(char **tmp, int size);
 char	**ft_parse(char **av, int size);
-void    ft_clear_tab(char ***s);
+void	ft_clear_tab(char ***s);
 
 #endif

@@ -41,18 +41,19 @@ char	**ft_add_one_arg(char **tmp, int size)
 	return (parsing);
 }
 
-void ft_clear_tab(char ***s)
+void	ft_clear_tab(char ***s)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while((*s)[i])
+	while ((*s)[i])
 	{
 		free((*s)[i]);
 		i++;
 	}
 	free(*s);
 }
+
 char	**ft_parse_arg(char *s)
 {
 	int		i;

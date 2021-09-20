@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddecourt@student.42.fr <ddecourt>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:11:32 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/07/02 16:11:35 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/09/20 21:56:05 by ddecourt@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,13 @@ int	sort_data(t_stack *a, t_stack *b, int size)
 	return (0);
 }
 
-int	ft_free(t_stack *a, t_stack *b)
+int	ft_free(t_stack *a, t_stack *b, char **parsing)
 {
 	if (a != NULL)
 		free_stack(a);
 	if (b != NULL)
 		free_stack(b);
+	ft_clear_tab(&parsing);
 	return (0);
 }
 
@@ -93,5 +94,6 @@ int	main(int ac, char **av)
 		size = ft_get_size(parsing) - 1;
 	if (!(ft_check_double(a, 0)) && !(check_if_sorted(a)) && !(c_flag(flag)))
 		sort_data(a, b, size);
+	ft_free(a, b, parsing);
 	return (0);
 }

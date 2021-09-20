@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ddecourt@student.42.fr <ddecourt>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:35:55 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/09/20 15:35:57 by ddecourt         ###   ########.fr       */
+/*   Updated: 2021/09/20 21:52:57 by ddecourt@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	**ft_add_one_arg(char **tmp, int size)
 	int		i;
 
 	i = 0;
-	parsing = ft_calloc(size, sizeof(char *));
+	parsing = malloc(sizeof(char *) * size);
 	if (parsing == NULL)
 	{
 		ft_putstr("Malloc function failed");
@@ -41,6 +41,18 @@ char	**ft_add_one_arg(char **tmp, int size)
 	return (parsing);
 }
 
+void ft_clear_tab(char ***s)
+{
+	int i;
+
+	i = 0;
+	while((*s)[i])
+	{
+		free((*s)[i]);
+		i++;
+	}
+	free(*s);
+}
 char	**ft_parse_arg(char *s)
 {
 	int		i;
@@ -52,7 +64,7 @@ char	**ft_parse_arg(char *s)
 	tmp = ft_split(s, ' ');
 	size = ft_get_size(tmp);
 	parsing = ft_add_one_arg(tmp, size);
-	free(tmp);
+	ft_clear_tab(&tmp);
 	return (parsing);
 }
 
@@ -62,7 +74,7 @@ char	**ft_parse(char **av, int size)
 	int		i;
 
 	i = -1;
-	parsing = ft_calloc(size, sizeof(char *));
+	parsing = malloc(sizeof(char *) * size);
 	if (parsing == NULL)
 	{
 		ft_putstr("Malloc function failed");

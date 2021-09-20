@@ -51,6 +51,15 @@ int	sort_data(t_stack *a, t_stack *b, int size)
 	return (0);
 }
 
+int	ft_free(t_stack *a, t_stack *b)
+{
+	if (a != NULL)
+		free_stack(a);
+	if (b != NULL)
+		free_stack(b);
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
 	int		size;
@@ -84,7 +93,5 @@ int	main(int ac, char **av)
 		size = ft_get_size(parsing) - 1;
 	if (!(ft_check_double(a, 0)) && !(check_if_sorted(a)) && !(c_flag(flag)))
 		sort_data(a, b, size);
-	free_stack(a);
-	free_stack(b);
 	return (0);
 }

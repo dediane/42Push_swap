@@ -70,5 +70,6 @@ char	**ft_parse(char **av, int size)
 	}
 	while (++i < size)
 		parsing[i] = ft_strdup(av[i]);
+	parsing[i] = NULL;
 	return (parsing);
 }

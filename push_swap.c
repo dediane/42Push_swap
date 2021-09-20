@@ -55,6 +55,7 @@ int	main(int ac, char **av)
 {
 	int		size;
 	int		flag;
+	char	**parsing;
 	t_stack	*a;
 	t_stack	*b;
 
@@ -62,15 +63,25 @@ int	main(int ac, char **av)
 	b = NULL;
 	size = ac;
 	flag = 0;
-	if (ac == 1 || ac == 2)
+	if (ac == 1)
 		return (0);
-	if (!(ft_check_int(av, ac, -1, 0)))
+	if (ac == 2)
+	{
+		parsing = ft_parse_arg(av[1]);
+		size = ft_get_size(parsing);
+	}
+	else
+		parsing = ft_parse(av, size);
+	if (!(ft_check_int(parsing, size, -1, 0)))
 		return (0);
 	a = init();
 	b = init();
 	while (--size > 0)
-		ft_stack(a, ft_atoi_ps(av[size], &flag, 1, 0));
-	size = ac - 1;
+		ft_stack(a, ft_atoi_ps(parsing[size], &flag, 1, 0));
+	if (ac != 2)
+		size = ac - 1;
+	else
+		size = ft_get_size(parsing) - 1;
 	if (!(ft_check_double(a, 0)) && !(check_if_sorted(a)) && !(c_flag(flag)))
 		sort_data(a, b, size);
 	free_stack(a);

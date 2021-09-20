@@ -22,6 +22,7 @@ SRCS =	push_swap.c \
 	srcs/optimize_algorithm.c \
 	srcs/algorithm_utils.c \
 	srcs/sort_five_value.c \
+	srcs/parsing.c \
 
 OBJS = ${SRCS:.c=.o}
 
@@ -35,7 +36,7 @@ CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 
 .c.o:
-	${CC} -c ${CFLAGS} -o $@ $< 
+	${CC} -g3 -c ${CFLAGS} -o $@ $< 
 
 $(NAME):    ${OBJS}
 		make -C libft

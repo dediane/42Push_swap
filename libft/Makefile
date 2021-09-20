@@ -47,6 +47,7 @@ SRCS	= ft_bzero.c \
 	  ft_putchar.c \
 	  ft_putstr.c \
 	  ft_putnbr.c \
+	  ft_strcpy.c \
 
 SRCS_B	= ft_lstnew.c \
 	  ft_lstadd_front.c \

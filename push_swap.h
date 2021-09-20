@@ -28,5 +28,6 @@
 # include "inc/optimize_algorithm.h"
 # include "inc/algorithm_utils.h"
 # include "inc/sort_five_value.h"
+# include "inc/parsing.h"
 
 #endif

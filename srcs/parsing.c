@@ -28,14 +28,14 @@ char	**ft_add_one_arg(char **tmp, int size)
 	int		i;
 
 	i = 0;
-	parsing = malloc(sizeof(char *) * size);
+	parsing = malloc(sizeof(char *) * (size + 1));
 	if (parsing == NULL)
 	{
 		ft_putstr("Malloc function failed");
 		exit(EXIT_FAILURE);
 	}
 	parsing[0] = ft_strdup(" ");
-	while (i++ < size)
+	while (++i < size)
 		parsing[i] = ft_strdup(tmp[i - 1]);
 	parsing[i] = NULL;
 	return (parsing);

@@ -6,7 +6,7 @@
 /*   By: ddecourt@student.42.fr <ddecourt>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:11:32 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/09/21 10:56:25 by ddecourt@st      ###   ########.fr       */
+/*   Updated: 2021/09/21 11:25:51 by ddecourt@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ int	ft_free(t_stack *a, t_stack *b, char **parsing)
 		free_stack(a);
 	if (b != NULL)
 		free_stack(b);
-	ft_clear_tab(&parsing);
+	if (parsing != NULL)
+		ft_clear_tab(&parsing);
 	return (0);
 }
 
@@ -69,12 +70,13 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
-	a = NULL;
-	b = NULL;
+	a = init();
+	b = init();
+	parsing = NULL;
 	size = ac;
 	flag = 0;
 	if (ac == 1)
-		return (0);
+		return ((ft_free(a, b, parsing)), (0));
 	if (ac == 2)
 	{
 		parsing = ft_parse_arg(av[1]);
@@ -84,8 +86,6 @@ int	main(int ac, char **av)
 		parsing = ft_parse(av, size);
 	if (!(ft_check_int(parsing, size, -1, 0)))
 		return ((ft_free(a, b, parsing)), (0));
-	a = init();
-	b = init();
 	while (--size > 0)
 		ft_stack(a, ft_atoi_ps(parsing[size], &flag, 1, 0));
 	if (ac != 2)

@@ -6,7 +6,7 @@
 /*   By: ddecourt@student.42.fr <ddecourt>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 21:13:34 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/09/21 10:56:20 by ddecourt@st      ###   ########.fr       */
+/*   Updated: 2021/09/21 11:27:08 by ddecourt@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_int(char **s, int max, int i, int flag)
 {
-	while (--max > 1)
+	while (--max > 0)
 	{
 		while (s[max][++i])
 		{

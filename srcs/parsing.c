@@ -6,7 +6,7 @@
 /*   By: ddecourt@student.42.fr <ddecourt>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:35:55 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/09/21 10:28:49 by ddecourt@st      ###   ########.fr       */
+/*   Updated: 2021/09/21 11:18:31 by ddecourt@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	**ft_parse_arg(char *s)
 	char	**tmp;
 	char	**parsing;
 
-	i = -1;
+	i = -1; 
 	tmp = ft_split(s, ' ');
 	size = ft_get_size(tmp);
 	parsing = ft_add_one_arg(tmp, size + 1);

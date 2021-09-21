@@ -82,7 +82,7 @@ int	main(int ac, char **av)
 	s = ac;
 	flag = 0;
 	if (ac == 1)
-		return(ft_free(a, b, NULL), (0));
+		return (ft_free(a, b, NULL), (0));
 	if (ac == 2)
 		ft_get_arg_tab(av[1], &parsing, &s);
 	else

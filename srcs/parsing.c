@@ -6,7 +6,7 @@
 /*   By: ddecourt@student.42.fr <ddecourt>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:35:55 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/09/20 21:52:57 by ddecourt@st      ###   ########.fr       */
+/*   Updated: 2021/09/21 10:28:49 by ddecourt@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**ft_parse_arg(char *s)
 	i = -1;
 	tmp = ft_split(s, ' ');
 	size = ft_get_size(tmp);
-	parsing = ft_add_one_arg(tmp, size);
+	parsing = ft_add_one_arg(tmp, size + 1);
 	ft_clear_tab(&tmp);
 	return (parsing);
 }
@@ -75,7 +75,7 @@ char	**ft_parse(char **av, int size)
 	int		i;
 
 	i = -1;
-	parsing = malloc(sizeof(char *) * size);
+	parsing = malloc(sizeof(char *) * (size + 1));
 	if (parsing == NULL)
 	{
 		ft_putstr("Malloc function failed");

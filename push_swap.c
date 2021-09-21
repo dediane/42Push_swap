@@ -6,7 +6,7 @@
 /*   By: ddecourt@student.42.fr <ddecourt>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:11:32 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/09/21 10:56:25 by ddecourt@st      ###   ########.fr       */
+/*   Updated: 2021/09/21 14:01:32 by ddecourt@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	main(int ac, char **av)
 		size = ac - 1;
 	else
 		size = ft_get_size(parsing) - 1;
-	if (!(ft_check_double(a, 0)) && !(check_if_sorted(a)) && !(c_flag(flag)))
+	if ((size != 0) && !(ft_check_double(a, 0)) && !(check_if_sorted(a)) && !(c_flag(flag)))
 		sort_data(a, b, size);
 	ft_free(a, b, parsing);
 	return (0);

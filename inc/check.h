@@ -16,8 +16,8 @@
 # include "../push_swap.h"
 
 int	ft_check_int(char **s, int max, int i, int flag);
-int	ft_check_double(t_stack *s, int flag);
-int	check_if_sorted(t_stack *a);
+int	chk_double(t_stack *s, int flag);
+int	chk_sorted(t_stack *a);
 int	c_flag(int flag);
 
 #endif

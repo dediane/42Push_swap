@@ -36,7 +36,7 @@ int	ft_check_int(char **s, int max, int i, int flag)
 	return (1);
 }
 
-int	ft_check_double(t_stack *s, int flag)
+int	chk_double(t_stack *s, int flag)
 {
 	t_unit	*tmp;
 	t_unit	*current;
@@ -64,7 +64,7 @@ int	ft_check_double(t_stack *s, int flag)
 	return (0);
 }
 
-int	check_if_sorted(t_stack *a)
+int	chk_sorted(t_stack *a)
 {
 	t_unit	*current;
 

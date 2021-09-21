@@ -33,21 +33,21 @@ int	ft_atoi_ps(const char *str, int *flag, int j, long long int nb)
 	return ((int)nb);
 }
 
-int	sort_data(t_stack *a, t_stack *b, int size)
+int	sort_data(t_stack *a, t_stack *b, int s)
 {
-	if (size == 2)
+	if (s == 2)
 	{
 		if (a->head->data > a->head->next->data)
 			sa(a);
 	}
-	else if (size == 3)
+	else if (s == 3)
 		sort_three_value(a, b);
-	else if (size == 5 || size == 4)
-		sort_five_value(a, b, size);
-	else if (size < 105 && size > 5)
-		better_selection_sort(a, b, size);
+	else if (s == 5 || s == 4)
+		sort_five_value(a, b, s);
+	else if (s < 105 && s > 5)
+		better_selection_sort(a, b, s);
 	else
-		optimize_algorithm(a, b, size);
+		optimize_algorithm(a, b, s);
 	return (0);
 }
 
@@ -61,39 +61,38 @@ int	ft_free(t_stack *a, t_stack *b, char **parsing)
 	return (0);
 }
 
+int	ft_get_arg_tab(char *s, char ***parsing, int *size)
+{
+	*parsing = ft_parse_arg(s);
+	*size = ft_get_size(*parsing);
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
-	int		size;
+	int		s;
 	int		flag;
 	char	**parsing;
 	t_stack	*a;
 	t_stack	*b;
 
-	a = NULL;
-	b = NULL;
-	size = ac;
-	flag = 0;
-	if (ac == 1)
-		return (0);
-	if (ac == 2)
-	{
-		parsing = ft_parse_arg(av[1]);
-		size = ft_get_size(parsing);
-	}
-	else
-		parsing = ft_parse(av, size);
-	if (!(ft_check_int(parsing, size, -1, 0)))
-		return ((ft_free(a, b, parsing)), (0));
 	a = init();
 	b = init();
-	while (--size > 0)
-		ft_stack(a, ft_atoi_ps(parsing[size], &flag, 1, 0));
-	if (ac != 2)
-		size = ac - 1;
+	s = ac;
+	flag = 0;
+	if (ac == 1)
+		return (ft_free(a, b, NULL), (0));
+	if (ac == 2)
+		ft_get_arg_tab(av[1], &parsing, &s);
 	else
-		size = ft_get_size(parsing) - 1;
-	if ((size != 0) && !(ft_check_double(a, 0)) && !(check_if_sorted(a)) && !(c_flag(flag)))
-		sort_data(a, b, size);
+		parsing = ft_parse(av, s);
+	if (!(ft_check_int(parsing, s, -1, 0)))
+		return ((ft_free(a, b, parsing)), (0));
+	while (--s > 0)
+		ft_stack(a, ft_atoi_ps(parsing[s], &flag, 1, 0));
+	s = ft_get_size(parsing) - 1;
+	if ((s != 0) && !(chk_double(a, 0)) && !(chk_sorted(a)) && !(c_flag(flag)))
+		sort_data(a, b, s);
 	ft_free(a, b, parsing);
 	return (0);
 }

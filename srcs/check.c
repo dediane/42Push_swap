@@ -25,7 +25,8 @@ int	ft_check_int(char **s, int max, int i, int flag)
 				if (s[max][i] == 45)
 				{
 					flag = 1;
-					if (s[max][i + 1] > 57 || s[max][i + 1] < 48)
+					if (s[max][i + 1] > 57 || s[max][i + 1] < 48 || \
+					s[max][i - 1] < 57 || s[max][i - 1] > 48)
 						return (ft_putstr("Error, not an integer\n"), (0));
 				}
 			}

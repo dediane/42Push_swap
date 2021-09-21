@@ -73,21 +73,21 @@ CFLAGS	= -Wall -Werror -Wextra
 RM	= rm -f
 
 .c.o:	
-	${CC} -c ${CFLAGS} -o $@ $< -I ${HEADER}
+	@${CC} -c ${CFLAGS} -o $@ $< -I ${HEADER}
 
 $(NAME):	${OBJS}
-			ar -rc ${NAME} ${OBJS}
+	@ar -rc ${NAME} ${OBJS}
 
 all:	${NAME}
 
 bonus:	${OBJS} ${OBJS_B}
-		ar -rc ${NAME} ${OBJS} ${OBJS_B}
+	@ar -rc ${NAME} ${OBJS} ${OBJS_B}
 
 clean:
-	${RM} *.o
+	@${RM} *.o
 
 fclean:	clean
-		${RM} ${NAME}
+	@${RM} ${NAME}
 
 re:	fclean all bonus
 

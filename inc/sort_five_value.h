@@ -13,10 +13,8 @@
 #ifndef SORT_FIVE_VALUE_H
 # define SORT_FIVE_VALUE_H
 
-int	sort_five_value(t_stack *a, t_stack *b, int size);
-int	final_sort_2(t_stack *a, t_stack *b, int i, int j);
-int	final_sort(t_stack *a, t_stack *b);
-int	sort_middle2_pos(t_stack *a, t_stack *b);
-int	sort_middle_pos(t_stack *a, t_stack *b);
+int		sort_five_value(t_stack *a, t_stack *b, int size);
+void	put_smallest_value_in_b_bis(int pos, t_stack *a, t_stack *b);
+void	put_smallest_value_in_b(int pos, t_stack *a, t_stack *b);
 
 #endif

@@ -12,93 +12,80 @@
 
 #include "../push_swap.h"
 
-int	final_sort(t_stack *a, t_stack *b)
+void	put_smallest_value_in_b(int pos, t_stack *a, t_stack *b)
 {
-	int	i;
-	int	j;
-
-	i = b->head->data;
-	j = a->head->next->next->data;
-	if (i < a->head->data)
-		pa(a, b);
-	else if (i > a->head->data && i < a->head->next->data)
-	{
-		pa(a, b);
-		sa(a);
-	}
-	else if (i > a->head->data && i > a->head->next->data && i < j)
+	if (pos == 4)
 	{
 		rra(a, b);
-		pa(a, b);
-		ra(a, b);
-		ra(a, b);
+		pb(a, b);
 	}
-	else if (i > j)
+	if (pos == 3)
 	{
-		pa(a, b);
-		ra(a, b);
+		rra(a, b);
+		rra(a, b);
+		pb(a, b);
 	}
-	return (0);
+	if (pos == 2)
+	{
+		ra(a, b);
+		ra(a, b);
+		pb(a, b);
+	}
+	if (pos == 1)
+	{
+		ra(a, b);
+		pb(a, b);
+	}
+	if (pos == 0)
+		pb(a, b);
 }
 
-int	sort_middle_pos(t_stack *a, t_stack *b)
+void	put_smallest_value_in_b_bis(int pos, t_stack *a, t_stack *b)
 {
-	pa(a, b);
-	sa(a);
-	pb(a, b);
-	sa(a);
-	pa(a, b);
-	return (0);
-}
-
-int	sort_middle2_pos(t_stack *a, t_stack *b)
-{
-	pa(a, b);
-	rra(a, b);
-	sa(a);
-	ra(a, b);
-	ra(a, b);
-	return (0);
-}
-
-int	final_sort_2(t_stack *a, t_stack *b, int i, int j)
-{
-	int	k;
-
-	k = a->head->next->next->next->data;
-	if (i < a->head->data)
-		pa(a, b);
-	else if (i > a->head->data && i < a->head->next->data)
+	if (pos == 3)
 	{
-		pa(a, b);
-		sa(a);
+		rra(a, b);
+		pb(a, b);
 	}
-	else if (i > a->head->data && i > a->head->next->data && i < j)
+	if (pos == 2)
 	{
-		sort_middle_pos(a, b);
+		rra(a, b);
+		rra(a, b);
+		pb(a, b);
 	}
-	else if (i > j && i < k)
+	if (pos == 1)
 	{
-		sort_middle2_pos(a, b);
-	}
-	else if (i > j && i > k)
-	{
-		pa(a, b);
 		ra(a, b);
+		pb(a, b);
 	}
-	return (0);
+	if (pos == 0)
+		pb(a, b);
 }
 
 int	sort_five_value(t_stack *a, t_stack *b, int size)
 {
 	int	i;
+	int	pos;
 
 	i = size;
-	while (i-- > 3)
-		pb(a, b);
-	sort_three_value(a, b);
-	final_sort(a, b);
 	if (size == 5)
-		final_sort_2(a, b, b->head->data, a->head->next->next->data);
+	{
+		pos = find_smallest_position(a);
+		put_smallest_value_in_b(pos, a, b);
+		pos = find_smallest_position(a);
+		put_smallest_value_in_b_bis(pos, a, b);
+		sort_three_value(a, b);
+		if (b->head->data < b->head->next->data)
+			sb(b);
+		pa(a, b);
+		pa(a, b);
+	}
+	if (size == 4)
+	{
+		pos = find_smallest_position(a);
+		put_smallest_value_in_b_bis(pos, a, b);
+		sort_three_value(a, b);
+		pa(a, b);
+	}
 	return (0);
 }

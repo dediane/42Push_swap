@@ -36,21 +36,22 @@ CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 
 .c.o:
-	${CC} -g3 -c ${CFLAGS} -o $@ $< 
+	@${CC} -c ${CFLAGS} -o $@ $< 
 
 $(NAME):    ${OBJS}
-		make -C libft
-		${CC} ${CFLAGS} ${OBJS} -L./libft -lft -o ${NAME}
+	@make -C libft
+	@${CC} ${CFLAGS} ${OBJS} -L./libft -lft -o ${NAME}
+	@echo "Compilation OK"
 
 all:	${NAME}
 
 clean: 
-	make clean -C libft
-	${RM} ${OBJS}
+	@make clean -C libft
+	@${RM} ${OBJS}
 
 fclean: clean
-		make fclean -C libft	
-		${RM} ${NAME}
+	@make fclean -C libft	
+	@${RM} ${NAME}
 
 re:	 fclean all
 

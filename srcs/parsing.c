@@ -61,7 +61,7 @@ char	**ft_parse_arg(char *s)
 	char	**tmp;
 	char	**parsing;
 
-	i = -1; 
+	i = -1;
 	tmp = ft_split(s, ' ');
 	size = ft_get_size(tmp);
 	parsing = ft_add_one_arg(tmp, size + 1);

@@ -20,13 +20,14 @@ int	ft_check_int(char **s, int max, int i, int flag)
 		{
 			if (s[max][i] > 57 || s[max][i] < 48)
 			{
-				if ((s[max][i] != 45) || ((s[max][i] == 45) && (flag != 0)))
+				if ((s[max][i] != 45) || ((s[max][i] == 45) && (flag != 0)) || \
+				((i != 0) && (s[max][i] == 45) && \
+				(ft_isalnum((s[max][i - 1])))))
 					return (ft_putstr("Error, not an integer\n"), (0));
 				if (s[max][i] == 45)
 				{
 					flag = 1;
-					if (s[max][i + 1] > 57 || s[max][i + 1] < 48 || \
-					s[max][i - 1] < 57 || s[max][i - 1] > 48)
+					if (s[max][i + 1] > 57 || s[max][i + 1] < 48)
 						return (ft_putstr("Error, not an integer\n"), (0));
 				}
 			}

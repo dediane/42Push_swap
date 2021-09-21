@@ -6,7 +6,7 @@
 /*   By: ddecourt@student.42.fr <ddecourt>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:11:32 by ddecourt          #+#    #+#             */
-/*   Updated: 2021/09/21 10:20:29 by ddecourt@st      ###   ########.fr       */
+/*   Updated: 2021/09/21 10:56:25 by ddecourt@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
+	a = NULL;
+	b = NULL;
 	size = ac;
 	flag = 0;
 	if (ac == 1)
@@ -81,7 +83,7 @@ int	main(int ac, char **av)
 	else
 		parsing = ft_parse(av, size);
 	if (!(ft_check_int(parsing, size, -1, 0)))
-		return (0);
+		return ((ft_free(a, b, parsing)), (0));
 	a = init();
 	b = init();
 	while (--size > 0)

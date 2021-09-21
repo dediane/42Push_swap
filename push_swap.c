@@ -57,7 +57,8 @@ int	ft_free(t_stack *a, t_stack *b, char **parsing)
 		free_stack(a);
 	if (b != NULL)
 		free_stack(b);
-	ft_clear_tab(&parsing);
+	if (parsing != NULL)
+		ft_clear_tab(&parsing);
 	return (0);
 }
 
@@ -81,7 +82,7 @@ int	main(int ac, char **av)
 	s = ac;
 	flag = 0;
 	if (ac == 1)
-		return (ft_free(a, b, NULL), (0));
+		return(ft_free(a, b, NULL), (0));
 	if (ac == 2)
 		ft_get_arg_tab(av[1], &parsing, &s);
 	else

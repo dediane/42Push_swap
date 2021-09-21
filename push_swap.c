@@ -69,8 +69,6 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
-	a = NULL;
-	b = NULL;
 	size = ac;
 	flag = 0;
 	if (ac == 1)
@@ -97,14 +95,3 @@ int	main(int ac, char **av)
 	ft_free(a, b, parsing);
 	return (0);
 }
-
-/*int	main(void)
-{
-	char **parsing;
-	//int size;
-
-	parsing = ft_parse_arg("5 61 1 2 8 4");
-	printf("size = %i\n",ft_get_size(parsing));
-	ft_clear_tab(&parsing);
-	return(0);
-}*/

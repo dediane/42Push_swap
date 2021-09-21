@@ -12,12 +12,6 @@
 
 #include "../push_swap.h"
 
-int	ft_error(void)
-{
-	ft_putstr("Error, not an integer\n");
-	exit(1);
-}
-
 int	ft_check_int(char **s, int max, int i, int flag)
 {
 	while (--max > 1)
@@ -27,12 +21,12 @@ int	ft_check_int(char **s, int max, int i, int flag)
 			if (s[max][i] > 57 || s[max][i] < 48)
 			{
 				if ((s[max][i] != 45) || ((s[max][i] == 45) && (flag != 0)))
-					ft_error();
+					return (ft_putstr("Error, not an integer\n"), (0));
 				if (s[max][i] == 45)
 				{
 					flag = 1;
 					if (s[max][i + 1] > 57 || s[max][i + 1] < 48)
-						ft_error();
+						return (ft_putstr("Error, not an integer\n"), (0));
 				}
 			}
 		}

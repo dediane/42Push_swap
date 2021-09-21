@@ -19,6 +19,5 @@ int	ft_check_int(char **s, int max, int i, int flag);
 int	ft_check_double(t_stack *s, int flag);
 int	check_if_sorted(t_stack *a);
 int	c_flag(int flag);
-int	ft_error(void);
 
 #endif

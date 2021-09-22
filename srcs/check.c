@@ -82,7 +82,7 @@ int	chk_sorted(t_stack *a)
 
 int	c_flag(int flag)
 {
-	if (flag == 1)
+	if (flag >= 1)
 	{
 		ft_putstr("Error, not an integer\n");
 		return (1);

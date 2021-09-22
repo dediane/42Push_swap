@@ -6,7 +6,7 @@
 #    By: ddecourt <ddecourt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 20:02:31 by ddecourt          #+#    #+#              #
-#    Updated: 2021/09/14 16:02:38 by ddecourt         ###   ########.fr        #
+#    Updated: 2021/09/21 22:16:08 by ddecourt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ HEADER = inc/push_swap.h
 
 CC = clang 
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address
 RM = rm -f
 
 .c.o:

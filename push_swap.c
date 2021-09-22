@@ -92,7 +92,7 @@ int	main(int ac, char **av)
 	while (--s > 0)
 		ft_stack(a, ft_atoi_ps(parsing[s], &flag, 1, 0));
 	s = ft_get_size(parsing) - 1;
-	if ((s != 0) && !(chk_double(a, 0)) && !(chk_sorted(a)) && !(c_flag(flag)))
+	if ((s != 0) && !(c_flag(flag) && !(chk_double(a, 0)) && !(chk_sorted(a))))
 		sort_data(a, b, s);
 	ft_free(a, b, parsing);
 	return (0);
